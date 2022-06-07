@@ -1,18 +1,23 @@
 radio.onReceivedValue(function (name, value) {
-    let initialized: number;
-if (name == "start") {
+    if (name == "start") {
+        basic.showIcon(IconNames.SmallHeart)
         time1 = value
+        receiver = 1
+        sender = 0
     } else if (name == "end") {
         time2 = value
         timediff = time2 - time1
         speed = 0
-        basic.showNumber(distance / (timediff / 1000))
+        basic.showNumber(distance / (timediff / 1000) * 0.681818)
     } else if (name == "init") {
         initialized = 1
     }
 })
 let prior_light = 0
 let current_light = 0
+let initialized = 0
+let receiver = 0
+let sender = 0
 let speed = 0
 let distance = 0
 let timediff = 0
@@ -24,6 +29,8 @@ time2 = 0
 timediff = 0
 distance = 10
 speed = 0
+sender = 0
+receiver = 0
 radio.setGroup(1)
 radio.sendValue("init", 0)
 basic.forever(function () {
@@ -32,8 +39,10 @@ basic.forever(function () {
         if (time1 == 0) {
             basic.showIcon(IconNames.Heart)
             time1 = control.millis()
+            receiver = 0
+            sender = 0
             radio.sendValue("start", time1)
-        } else if (time2 == 0) {
+        } else if (time2 == 0 && receiver == 1) {
             basic.showIcon(IconNames.Yes)
             time2 = control.millis()
             radio.sendValue("end", time2)
