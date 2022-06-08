@@ -23,7 +23,6 @@ let distance = 0
 let timediff = 0
 let time2 = 0
 let time1 = 0
-let initialized2 = 0
 time1 = 0
 time2 = 0
 timediff = 0
