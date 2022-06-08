@@ -7,8 +7,8 @@ radio.onReceivedValue(function (name, value) {
     } else if (name == "end") {
         time2 = value
         timediff = time2 - time1
-        speed = 0
-        basic.showNumber(distance / (timediff / 1000) * 0.681818)
+        speed = distance / (timediff / 1000) * 0.681818
+        basic.showNumber(speed)
     } else if (name == "init") {
         initialized = 1
     }
