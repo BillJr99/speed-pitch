@@ -15,7 +15,6 @@ radio.onReceivedValue(function (name, value) {
 })
 let prior_light = 0
 let current_light = 0
-let initialized = 0
 let receiver = 0
 let sender = 0
 let speed = 0
@@ -23,6 +22,8 @@ let distance = 0
 let timediff = 0
 let time2 = 0
 let time1 = 0
+let initialized = 0
+initialized = 0
 time1 = 0
 time2 = 0
 timediff = 0
