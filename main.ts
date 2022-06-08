@@ -40,7 +40,7 @@ basic.forever(function () {
             basic.showIcon(IconNames.Heart)
             time1 = control.millis()
             receiver = 0
-            sender = 0
+            sender = 1
             radio.sendValue("start", time1)
         } else if (time2 == 0 && receiver == 1) {
             basic.showIcon(IconNames.Yes)
