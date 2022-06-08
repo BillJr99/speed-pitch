@@ -13,8 +13,6 @@ radio.onReceivedValue(function (name, value) {
         initialized = 1
     }
 })
-let prior_light = 0
-let current_light = 0
 let receiver = 0
 let sender = 0
 let speed = 0
@@ -29,6 +27,8 @@ time2 = 0
 timediff = 0
 distance = 10
 speed = 0
+let current_light = 0
+let prior_light = 0
 sender = 0
 receiver = 0
 radio.setGroup(1)
